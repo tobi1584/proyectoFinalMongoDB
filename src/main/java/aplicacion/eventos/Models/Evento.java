@@ -11,7 +11,7 @@ import java.util.Set;
 
 @Data
 @Document(collection = "eventos")
-public class Eventos {
+public class Evento {
 
     @Id
     private ObjectId id;
@@ -20,5 +20,6 @@ public class Eventos {
     private LocalTime hora;
     private String ubicacion;
     private Integer capacidad;
-    private Set<ObjectId> entradasVendidas;
+    private Set<String> artistas;
+    private Float precioEntrada;
 }

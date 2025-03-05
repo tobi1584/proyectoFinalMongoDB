@@ -1,6 +1,8 @@
 package aplicacion.eventos.Services;
 
 import aplicacion.eventos.Models.Artista;
+import org.bson.types.ObjectId;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -10,11 +12,11 @@ public interface IArtistasService {
 
     List<Artista> obtenerTodosLosArtistas();
 
-    Optional<Artista> buscarPorNombre(String nombre);
+    Artista buscarPorNombre(String nombre);
 
     List<Artista> buscarPorGenero(String genero);
 
-    Artista actualizarArtista(String id, Artista artista);
+    Artista actualizarArtista(ObjectId id, Artista artista);
 
-    void eliminarArtista(String id);
+    void eliminarArtista(ObjectId id);
 }
