@@ -30,6 +30,9 @@ public class EventosService implements IEventosService {
     // Método para crear un nuevo evento
     @Override
     public Evento createNew(Evento evento) {
+        if (evento.getId() == null || evento.getId().isEmpty()) {
+            evento.setId(new ObjectId().toString());
+        }
         verificarArtistas(evento.getArtistas());
         return eventosRepository.save(evento);
     }
