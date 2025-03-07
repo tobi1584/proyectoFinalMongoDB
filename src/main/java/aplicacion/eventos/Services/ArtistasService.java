@@ -54,7 +54,7 @@ public class ArtistasService implements IArtistasService{
     }
 
     @Override
-    public void eliminarArtista(ObjectId id) {
-        artistasRepository.deleteById(id);
+    public void eliminarArtista(String id) {
+        artistasRepository.deleteById(new ObjectId(id));
     }
 }

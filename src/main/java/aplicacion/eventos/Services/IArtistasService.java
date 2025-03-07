@@ -18,5 +18,5 @@ public interface IArtistasService {
 
     Artista actualizarArtista(ObjectId id, Artista artista);
 
-    void eliminarArtista(ObjectId id);
+    void eliminarArtista(String id);
 }

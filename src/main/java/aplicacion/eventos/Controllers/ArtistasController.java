@@ -47,7 +47,7 @@ public class ArtistasController {
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity<Void> eliminarArtista(@RequestParam ObjectId id) {
+    public ResponseEntity<Void> eliminarArtista(@RequestParam String id) {
         artistasService.eliminarArtista(id);
         return ResponseEntity.noContent().build();
     }
