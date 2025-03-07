@@ -12,7 +12,7 @@ import java.util.Set;
 public class Artista {
 
     @Id
-    private ObjectId id;
+    private String id;
     private String nombre;
     private String generoMusical;
     private String biografia;

@@ -21,5 +21,5 @@ public interface IEventosService {
 
     Evento updateEvent(Evento evento);
 
-    void deleteEvent(ObjectId id);
+    void deleteEvent(String id);
 }

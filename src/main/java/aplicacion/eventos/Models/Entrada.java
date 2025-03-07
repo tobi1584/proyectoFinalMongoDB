@@ -10,9 +10,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Entrada {
 
     @Id
-    private ObjectId id;
-    private ObjectId eventoId;
+    private String id;
+    private String eventoId;
     private String compradorEmail;
     private Float precio;
-    private boolean anulada = false;
+    private boolean anulada = false; // Con esto se sabe si se ha tenido que anular la entrada
 }

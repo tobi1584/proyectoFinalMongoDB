@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;
 
-public interface ArtistasRepository extends MongoRepository<Artista, ObjectId> {
+public interface ArtistasRepository extends MongoRepository<Artista, String> {
 
     Artista findByNombre(String nombre);
 

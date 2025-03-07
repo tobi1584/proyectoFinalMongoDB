@@ -14,7 +14,7 @@ import java.util.Set;
 public class Evento {
 
     @Id
-    private ObjectId id;
+    private String id;
     private String nombre;
     private LocalDate fecha;
     private LocalTime hora;

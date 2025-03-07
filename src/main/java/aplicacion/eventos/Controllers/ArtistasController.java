@@ -1,7 +1,9 @@
 package aplicacion.eventos.Controllers;
 
 import aplicacion.eventos.Models.Artista;
+import aplicacion.eventos.Models.Evento;
 import aplicacion.eventos.Services.ArtistasService;
+import aplicacion.eventos.Services.EventosService;
 import lombok.AllArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +16,10 @@ import java.util.List;
 @AllArgsConstructor
 public class ArtistasController {
 
+    // Autowired de el servicio
     private final ArtistasService artistasService;
+
+    private final EventosService eventosService;
 
     @PostMapping("/create")
     public ResponseEntity<Artista> agregarArtista(@RequestBody Artista artista) {
@@ -41,13 +46,14 @@ public class ArtistasController {
     }
 
     @PutMapping("/update")
-    public ResponseEntity<Artista> actualizarArtista(@RequestParam ObjectId id, @RequestBody Artista artista) {
+    public ResponseEntity<Artista> actualizarArtista(@RequestParam String id, @RequestBody Artista artista) {
         Artista artistaActualizado = artistasService.actualizarArtista(id, artista);
+
         return ResponseEntity.ok(artistaActualizado);
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity<Void> eliminarArtista(@RequestParam ObjectId id) {
+    public ResponseEntity<Void> eliminarArtista(@RequestParam String id) {
         artistasService.eliminarArtista(id);
         return ResponseEntity.noContent().build();
     }

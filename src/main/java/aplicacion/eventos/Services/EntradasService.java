@@ -28,7 +28,7 @@ public class EntradasService implements IEntradasService {
     }
 
     @Override
-    public String getNumEntradasPorEvento(ObjectId idEvento) {
+    public String getNumEntradasPorEvento(String idEvento) {
         if (eventosRepository.existsById(idEvento)) {
             List<Entrada> entradas = entradasRepository.findAll();
             long num = entradas.stream()
@@ -41,7 +41,7 @@ public class EntradasService implements IEntradasService {
     }
 
     @Override
-    public String anularEvento(ObjectId idEntrada) {
+    public String anularEvento(String idEntrada) {
         Optional<Entrada> entrada = entradasRepository.findById(idEntrada);
         if (entrada.isPresent()) {
             Entrada entradaActualizada = entrada.get();
@@ -55,5 +55,11 @@ public class EntradasService implements IEntradasService {
         } else {
             return "Entrada no encontrada";
         }
+    }
+
+    @Override
+    public List<Entrada> getAll() {
+        List<Entrada> listaEntradas = entradasRepository.findAll();
+        return listaEntradas;
     }
 }

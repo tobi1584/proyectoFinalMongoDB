@@ -16,7 +16,7 @@ public interface IArtistasService {
 
     List<Artista> buscarPorGenero(String genero);
 
-    Artista actualizarArtista(ObjectId id, Artista artista);
+    Artista actualizarArtista(String id, Artista artista);
 
-    void eliminarArtista(ObjectId id);
+    void eliminarArtista(String id);
 }

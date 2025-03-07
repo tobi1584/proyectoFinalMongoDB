@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import java.time.LocalDate;
 import java.util.Set;
 
-public interface EventosRepository extends MongoRepository<Evento, ObjectId> {
+public interface EventosRepository extends MongoRepository<Evento, String> {
 
     Evento findAllByNombre(String nombre);
 

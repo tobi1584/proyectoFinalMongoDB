@@ -48,14 +48,14 @@ public class EventosController {
     }
 
     @PutMapping("/updateEvento")
-    public ResponseEntity<Evento> updateEvent(@RequestParam ObjectId id, @RequestBody Evento evento) {
+    public ResponseEntity<Evento> updateEvent(@RequestParam String id, @RequestBody Evento evento) {
         evento.setId(id);
         Evento updatedEvento = eventosService.updateEvent(evento);
         return ResponseEntity.ok(updatedEvento);
     }
 
     @DeleteMapping("/deleteEvento")
-    public ResponseEntity<Void> deleteEvent(@RequestParam ObjectId id) {
+    public ResponseEntity<Void> deleteEvent(@RequestParam String id) {
         eventosService.deleteEvent(id);
         return ResponseEntity.noContent().build();
     }
